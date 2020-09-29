@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="wrapper">
-    <notifications :max="10" :width="450" ></notifications>
     <header class="header">
       <div class="logo">
         <img svg-inline src="@/assets/img/corgi.svg"></img>
