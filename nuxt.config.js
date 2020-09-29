@@ -40,8 +40,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv',
-    '@nuxtjs/firebase',
+    '@nuxtjs/dotenv'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -73,56 +72,5 @@ export default {
     ],
     "display": "standalone",
     "background_color": "#ffffff",
-  },
-  firebase: {
-    config: {
-      production: {
-        apiKey: process.env.FIREBASE_APIKEY,
-        authDomain: process.env.FIREBASE_AUTHDOMAIN,
-        databaseURL: process.env.FIREBASE_DATABASEURL,
-        projectId: process.env.FIREBASE_PROJECTID,
-        storageBucket: process.env.FIREBASE_STORAGEBUCKET,
-        messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
-        appId: process.env.FIREBASE_APPID,
-        measurementId: process.env.FIREBASE_MEASUREMENTID
-      },
-      development: {
-        apiKey: process.env.FIREBASE_APIKEY,
-        authDomain: process.env.FIREBASE_AUTHDOMAIN,
-        databaseURL: process.env.FIREBASE_DATABASEURL,
-        projectId: process.env.FIREBASE_PROJECTID,
-        storageBucket: process.env.FIREBASE_STORAGEBUCKET,
-        messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
-        appId: process.env.FIREBASE_APPID,
-        measurementId: process.env.FIREBASE_MEASUREMENTID
-      }
-    },
-    customEnv: false,
-    onFirebaseHosting: false,
-    services: {
-      auth: {
-        persistence: 'local',
-        initialize: {
-          onAuthStateChangedMutation: "store/SET_AUTH_USER",
-          onAuthStateChangedAction: null,
-        },
-      },
-      storage: false,
-      realtimeDb: false,
-      performance: true,
-      analytics: true,
-      remoteConfig: {
-        settings: {
-          fetchTimeoutMillis: 60000, // Default
-          minimumFetchIntervalMillis: 43200000 // Default
-        },
-        defaultConfig: {
-          welcome_message: "Bienvenido"
-        }
-      },
-      messaging: {
-        createServiceWorker: true
-      }
-    }
   }
 }
